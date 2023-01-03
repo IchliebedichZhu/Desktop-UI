@@ -1,0 +1,26 @@
+{
+  "name": "@desktop-ui/builder",
+  "private": true,
+  "scripts": {
+    "build": "gulp",
+    "test": "rollup --config ./src/rollup.config.ts --configPlugin typescript"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^10.0.1",
+    "@types/gulp": "^4.0.10",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "ts-node": "^10.9.1",
+    "unplugin-vue": "^4.0.1",
+    "unplugin-vue-macros": "^1.2.2"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "D": "^1.0.0",
+    "rollup-plugin-esbuild": "^5.0.0"
+  }
+}

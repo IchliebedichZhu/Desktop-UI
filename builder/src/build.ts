@@ -2,27 +2,23 @@ import { defineConfig, rollup } from "rollup";
 import { resolve as pathResolve } from "node:path";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import VueMacros from "unplugin-vue-macros/rollup";
+import VueMacros from "unplugin-vue-macros";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import esbuild from "rollup-plugin-esbuild";
 
-console.log(
-  pathResolve(process.cwd(), "..", "packages", "components", "index.ts")
-);
-
+const input = [
+  pathResolve(process.cwd(), "..", "packages", "components", "index.ts"),
+];
+console.log("input", input);
 const config = defineConfig({
-  input: pathResolve(process.cwd(), "..", "packages", "components", "index.ts"),
-  output: {
-    dir: pathResolve(process.cwd(), "..", "dist"),
-  },
+  input: input,
   plugins: [
-    VueMacros({
-      setupComponent: false,
-      setupSFC: false,
+    VueMacros.rollup({
       plugins: {
         vue: vue({
-          isProduction: true,
+          include: [/\.vue$/, /setup\.[cm]?[jt]sx?$/],
+          reactivityTransform: true,
         }),
         vueJsx: vueJsx(),
       },

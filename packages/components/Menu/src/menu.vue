@@ -2,10 +2,6 @@
 import { ref } from "vue";
 
 const test = ref("123");
-
-return {
-  test,
-};
 </script>
 
 <template>

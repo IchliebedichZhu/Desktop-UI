@@ -1,12 +1,13 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["play/env.d.ts", "play/**/*", "play/**/*.vue"],
-  "exclude": ["play/**/__tests__/*"],
+  "include": ["typings/env.d.ts"],
+  "exclude": ["play/**/__tests__/*", "packages/components/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["play/*"]
-    }
+      "@play/*": ["play/*"]
+    },
   }
+  
 }

@@ -1,3 +1,9 @@
-import buildFun from "./src/build";
+import { series } from "gulp";
+import build from "./build/index";
 
-export default buildFun;
+export default series([
+  async (done) => {
+    await build();
+    done();
+  },
+]) as () => void;

@@ -6,12 +6,16 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/glob": "^8.0.0",
     "@types/gulp": "^4.0.10",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "fast-glob": "^3.2.12",
+    "glob": "^8.1.0",
     "gulp": "^4.0.2",
     "rollup": "^3.9.1",
     "rollup-plugin-esbuild": "^5.0.0",
+    "ts-morph": "^17.0.1",
     "vite": "^4.0.4"
   }
 }
